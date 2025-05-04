@@ -1,0 +1,30 @@
+---
+title: First post
+---
+
+# {frontmatter.title}
+
+After the deployment of React 16.8, React allows you to write components without the use of classes. The lifecycle methods in classes have been replaced by the new cool, hooks.
+
+When I started learning React, it was when these hooks were out so I didn't spend a lot of time with component classes, however, mainly wrote them. But after watching a couple of videos about the wonders of the new addition to React, I decided to give it a try. And oh boy, what an adventure.
+
+## Hooks?
+
+There are several hooks you can use today in ReactJS, which are listed down below:
+
+1. useState
+2. useEffect
+3. useLayoutEffect
+4. useDebugValue
+5. useReducer
+6. useRef
+7. useContext
+
+and many others, which might not be used as much as the above.
+
+Hooks allow you to control various aspects of a React application, just like classes. useState is to control component state, useEffect is to control what your component does when it mounts, updates, or unmounts, useLayoutEffect is similar to useEffect but is used to usually paint the DOM and runs synchronously, unlike useEffect , useDebugValue is used in custom hooks to help you debug values or actions in your hook (more on that later), useReducer helps you use a reducer within an application to control state (just like a Redux reducer), useRef allows you to store mutable or immutable variables to store their values across state changes (they are immune to component re-renders, basically).
+
+## `useState`
+
+useState returns a tuple, an array containing two values that can be destructured, as shown in the figure above. This is what the return type looks like:
+
