@@ -1,0 +1,64 @@
+---
+title: An Introduction to React Hooks (JS)
+published: 06-04-2025
+updated: 06-05-2025
+---
+
+# {frontmatter.title}
+
+Since the deployment of React 16.8, React allows you to write components without the use of classes. The lifecycle methods in classes have been replaced by the new cool, hooks.
+
+When I started learning React, it was when these hooks were out so I didn't spend a lot of time with component classes, however, mainly wrote them. But after watching a couple of videos about the wonders of the new addition to React, I decided to give it a try. And oh boy, what an adventure.
+
+## Hooks?
+
+There are several hooks you can use today in ReactJS, which are listed down below:
+
+1. useState
+2. useEffect
+3. useLayoutEffect
+4. useDebugValue
+5. useReducer
+6. useRef
+7. useContext
+
+and many others, which might not be used as much as the above.
+
+Hooks allow you to control various aspects of a React application, just like classes. useState is to control component state, useEffect is to control what your component does when it mounts, updates, or unmounts, useLayoutEffect is similar to useEffect but is used to usually paint the DOM and runs synchronously, unlike useEffect , useDebugValue is used in custom hooks to help you debug values or actions in your hook (more on that later), useReducer helps you use a reducer within an application to control state (just like a Redux reducer), useRef allows you to store mutable or immutable variables to store their values across state changes (they are immune to component re-renders, basically).
+
+## `useState`
+
+`useState` returns a tuple, an array containing two values that can be destructured, as shown in the figure above. This is what the return type looks like:
+
+```ts
+useState<T>(initialValue: T): [T, React.Dispatch<React.SetStateAction<T>>]
+```
+
+Here is an example of how it's used:
+
+```ts
+const [count, setCount] = useState(0);
+
+// Increment by 1
+
+setCount(count + 1)
+setCount(prevCount => prevCount + 1)
+
+// Set count to 5
+
+setCount(5)
+```
+
+In the first example (incrementing by 1), having four back-to-back calls of `setCount(count + 1)` in a function will not change the count to 4, but it will set it to 1. This is because since the release of React 18, updates are **batched**. This means, that the four calls to change the count are combined into a single call, and since all 4 appear the same, effectively only one will be called at build time. In order to escape this behavior, we use a callback function `setCount(prevCount => prevCount + 1)` to update the state.
+
+## `useEffect`
+
+`useEffect` is to handle what a component does when it mounts, unmounts, and/or updates.
+
+
+In fact, you can run the function in a `useEffect` hook when one or more state variables change — just add the variables into the dependency array as the second parameter of the hook.
+
+## `useRef`
+
+`useRef` is an interesting hook. In fact, I don't know how much advantage one even take of its existence. This hook persists stored values during the entire lifetime of the component. You can update this value without causing re-renders! However, these updates will not be visible. To make them visible, a re-render must occur. Nevertheless, it can be advantageous in several cases.
+
