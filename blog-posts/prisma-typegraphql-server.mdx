@@ -1,0 +1,94 @@
+---
+title: Creating a Prisma and TypeGraphQL server
+published: 06-05-2025
+updated: 06-05-2025
+---
+
+# {frontmatter.title}
+
+
+I'm a fan of typescript and always would like to use it for all my projects. While researching on ORMs to manage databases easily, I came across Prisma. And I am in love with it. It makes handling databases easier than anything else I have ever tried.
+However, during my research process, I was unsure whether I find a Prisma Integration with TypeGraphQL, but fortunately, there exists one - which reduces your work SIGNIFICANTLY.
+Trust me.
+
+For people who are new to Prisma, you can view their docs [https://prisma.io/][here].
+
+## A simple introduction
+Prisma is a next-generation ORM (as mentioned in their docs), that allows you to handle and work with databases using 3 main tools that Prisma provides:
+
+1. Prisma `migrate` (synchronize your database with your schema)
+2. Prisma `client` (get type-safe objects to run your database commands)
+3. Prisma Studio (an app to view your database in a tabular form and also interact with it)
+
+To generate Prisma schema, one usually creates something called as a schema.prisma file, which uses prisma syntax to outline the database provider and tables with types and relations.
+
+Don't worry, I learned it in a day, and I am not even a formal SE!
+
+Your database is referenced by the datasource "block", following an alias for your database. Your tables are initialized by using the model "block", yet again followed by an alias for the database table. There are other keywords, which can be found here.
+
+## Initialization
+Initialize npm/yarn/pnpm (this should create a `package.json` file in your current working directory):
+
+```shell
+yarn init -y
+# or, with npm
+npm init
+```
+
+Installing the Prisma CLI:
+
+```shell
+yarn add -D prisma typescript
+```
+
+Installing the Prisma Client and TypeGraphQL generator:
+```shell
+yarn add @prisma/client typegraphql-prisma
+```
+Installing the server-managing libraries and dependencies:
+
+```shell
+yarn add graphql apollo-server-express express dotenv graphql-scalars graphql-fields @types/graphql-fields type-graphql class-validator reflect-metadata
+
+yarn add -D nodemon @types/node
+```
+
+Initialize a tsconfig.json file:
+```shell
+tsc --init
+```
+
+Add these scripts to your package.json file:
+
+[TODO]
+
+The `dev` script is to start the server.
+The `mig` script is to synchronize our database, with a name for the migration.
+The `gen` script is to generate the types for the typescript generators (for @prisma/client and typegraphql-prisma)
+The `watch` script is to generate the javascript from our typescript, to speed up testing.
+
+## Creating the schema
+Usually, when using Prisma, you are supposed to create a `schema.prisma` file either in the root directory or in a `prisma` directory. We'll be going for the second way.
+
+Here, we have created a User model and a `Profile` model and also established a relation between them, using the `@relation` attribute, that takes 2 parameters: `fields` and `references`. `fields` refers to the unique identifier from the current object and `references` refers to the unique id of the User.
+
+Now, time to add the `index.ts` file to handle our server, before we build the schema.
+
+Now, in your terminal, run:
+```shell
+yarn mig init
+```
+
+This will create our new migration, and run this against our database, along with generating `typegraphql` and `prisma` client code.
+
+That's it. Seriously.
+
+The TypeGraphQL generator even creates CRUD resolvers!
+
+Now start your server using yarn dev and play in the GraphQL Playground.
+
+---
+
+If you have any problems, feel free to contact me.
+
+Thank you for reading this article!
