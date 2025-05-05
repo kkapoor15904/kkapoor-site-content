@@ -1,0 +1,70 @@
+{
+  "experience": [
+    {
+      "id": 1,
+      "title": "Electromagnets and Cooling Team Lead",
+      "org": { "name": "mu-zero HYPERLOOP", "link": "https://mu-zero.de" },
+      "duration": { "start": "Oct 2024" },
+      "description": "Development of electromagnets, water cooling circuit, and heat exchangers.",
+      "skills": []
+    },
+    {
+      "id": 2,
+      "title": "Teaching Assistant",
+      "org": {
+        "name": "Institute der Fakultät für Mathematik @ KIT",
+        "link": "https://www.math.kit.edu/"
+      },
+      "duration": { "start": "Oct 2023", "stop": "Oct 2024" },
+      "description": "Advanced Mathematics tutoring for the first and second semester students of the batch of 2023.",
+      "skills": []
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "title": "Karlsruher Institut für Technologie (KIT)",
+      "degree": "B.Sc. Mechanical Engineering",
+      "link": "https://www.kit.edu/",
+      "duration": { "start": "Oct 2022" },
+      "description": "Final semester student"
+    },
+    {
+      "id": 2,
+      "title": "NES International School Mumbai",
+      "degree": "K-12",
+      "duration": { "start": "Jun 2009", "stop": "Jul 2022" },
+      "link": "https://www.nesinternational.org/",
+      "description": "Grade: IB 42/45"
+    }
+  ],
+  "projects": [
+    {
+      "id": "mu-zero-web-dev",
+      "title": "mu-zero HYPERLOOP web development",
+      "org": { "name": "mu-zero HYPERLOOP", "link": "https://mu-zero.de" },
+      "description": "Developed a static webpage for mu-zero HYPERLOOP using Next JS and TypeScript.",
+      "duration": { "start": "Dec 2024" }
+    },
+    {
+      "id": "merc-downtime-doc",
+      "title": "Intelligent Downtime Documentation",
+      "description": "Secured 2nd Place in 3rd Challenge \"Intelligent Downtime Documentation\"",
+      "duration": { "start": "Nov 2024", "stop": "Jan 2025" },
+      "org": {
+        "name": "Mercedes Academic Co-Creation",
+        "link": "https://group.mercedes-benz.com/careers/students/"
+      }
+    },
+    {
+      "id": "research-dielectric",
+      "title": "Single- and Polycrystalline diamond dielectric characterization with superconducting LC micro-resonators",
+      "description": "Impact of dielectric constant and loss tangent (tan δ) of the chosen dielectric substrate in a microstrip resonator with pre-defined geometry on its resonant frequency, bandwidth, signal strength, and therefore its quality factor.",
+      "org": {
+        "name": "Institut für Angewandte Materialien - Angewandte Werkstoffphysik (IAM-AWP) @ KIT",
+        "link": "https://www.iam.kit.edu/awp/index.php"
+      },
+      "duration": { "start": "Jul 2024", "stop": "Aug 2024" }
+    }
+  ]
+}
