@@ -62,4 +62,23 @@ In fact, you can run the function in a `useEffect` hook when one or more state v
 
 `useRef` is an interesting hook. In fact, I don't know how much advantage one even take of its existence. This hook persists stored values during the entire lifetime of the component. You can update this value without causing re-renders! However, these updates will not be visible. To make them visible, a re-render must occur. Nevertheless, it can be advantageous in several cases.
 
-More hooks coming! - Stay tuned
+
+## `useReducer`
+The `useReducer` hook enables you to use reducers to control state in your React application.
+
+### What is a reducer?
+A reducer is a function that enables you to provide the current state of a component and return the next, updated state. It has two parameters: state and action. An action always has a `.type` property, which is a string, and an optional `.payload` property to provide an external value. To run reducers, there is a dispatch function, wherein you input the action type (and payload).
+
+
+In case you are a TypeScript user, reducers are some of the go-to things in your React application because of excellent type intellisense. Using typescript:
+
+In a separate article, I'll show you all the tips and tricks you can use to build and use reducers in your applications (React, or non-React).
+
+**Back to React**
+
+This is how you would use it in an application. The action types make it much easier to determine the action that is being performed, making them very helpful when managing complex states.
+
+It's that simple!
+
+## `useLayoutEffect`
+Firstly: this is hardly used. Only helpful to measure the properties of page elements. The hook runs synchronously, unlike `useEffect`, which could affect page painting. Usage is exactly like `useEffect`.
