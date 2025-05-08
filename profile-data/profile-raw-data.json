@@ -66,5 +66,24 @@
       },
       "duration": { "start": "Jul 2024", "stop": "Aug 2024" }
     }
+  ],
+  "licenses_and_certifications": [
+    {
+      "id": 1,
+      "title": "Electromagnetic Compatibility (EMC)",
+      "org": {
+        "name": "Würth Elektronik Group",
+        "link": "https://www.wuerth.de/"
+      },
+      "issue_date": "Apr 2025"
+    },
+    {
+      "id": 2,
+      "title": "Deutschzertifikat B2",
+      "org": {
+        "name": "Carl Benz School of Engineering"
+      },
+      "issue_date": "Aug 2023"
+    }
   ]
 }
