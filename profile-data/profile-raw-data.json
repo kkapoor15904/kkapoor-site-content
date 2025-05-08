@@ -84,6 +84,14 @@
         "name": "Carl Benz School of Engineering"
       },
       "issue_date": "Aug 2023"
+    },
+    {
+      "id": 3,
+      "title": "Certificate Advanced CAD/PDM",
+      "org": {
+        "name": "Karlsruher Institut für Technologie (KIT)",
+        "link": "https://www.kit.edu/"
+      }
     }
   ]
 }
